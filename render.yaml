@@ -1,11 +1,12 @@
 services:
   - type: web
     name: tiktok-chat-reader
-    runtime: python
+    env: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "uvicorn app:app --host 0.0.0.0 --port $PORT"
     plan: free
-    buildCommand: pip install -r requirements.txt
-    startCommand: uvicorn app:app --host 0.0.0.0 --port $PORT
-    healthCheckPath: /api/health
+    autoDeploy: true
+    healthCheckPath: "/api/health"
     envVars:
       - key: PYTHON_VERSION
-        value: 3.11.11
+        value: 3.11

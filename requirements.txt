@@ -1,4 +1,6 @@
-fastapi==0.116.1
-uvicorn[standard]==0.35.0
-TikTokLive==6.6.5
-pydantic==2.11.7
+fastapi>=0.100.0
+uvicorn[standard]>=0.22.0
+Jinja2>=3.1.2
+# TikTokLive is optional but required for live comments
+TikTokLive>=1.2.0
+edge-tts>=6.1.10
